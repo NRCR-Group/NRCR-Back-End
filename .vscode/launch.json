@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<nrcrbackend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.nrcr.nrcrbackend.DemoApplication",
+            "projectName": "nrcrbackend",
+            "args": ""
+        }
+    ]
+}
