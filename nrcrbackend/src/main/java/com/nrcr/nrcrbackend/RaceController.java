@@ -1,6 +1,5 @@
 package com.nrcr.nrcrbackend;
 
-
 import org.bson.types.ObjectId;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -24,6 +24,11 @@ public class RaceController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Races getRaceById(@PathVariable("id") ObjectId id) {
         return repository.findBy_id(id);
+    }
+
+    @RequestMapping(value = "/Driver/{driverName}", method = RequestMethod.GET)
+    public List<Races> getRaceByDriverName(@PathVariable("driverName") String driverName) {
+        return repository.findByDriverName(driverName);
     }
 
 }

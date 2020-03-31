@@ -1,13 +1,15 @@
 package com.nrcr.nrcrbackend;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDate;
 
-@Document(collection = "test")
-public class Races {
+
+@Document(collection = "A_Collection")
+public @Data class Races {
 
     @Id
     public String _id;
@@ -31,81 +33,4 @@ public class Races {
     public Races() {
     }
 
-    public Races(String _id, String driverName, LocalDate raceDate) {
-        this._id = _id;
-        this.driverName = driverName;
-        this.raceDate = raceDate;
-    }
-
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
-    }
-
-    public String getDriverName() {
-        return driverName;
-    }
-
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
-    }
-
-    public LocalDate getRaceDate() {
-        return raceDate;
-    }
-
-    public void setRaceDate(LocalDate raceDate) {
-        this.raceDate = raceDate;
-    }
-
-    public String getQualifyingResultLap() {
-        return qualifyingResultLap;
-    }
-
-    public void setQualifyingResultLap(String qualifyingResultLap) {
-        this.qualifyingResultLap = qualifyingResultLap;
-    }
-
-    public String getQualifyingResultTime() {
-        return qualifyingResultTime;
-    }
-
-    public void setQualifyingResultTime(String qualifyingResultTime) {
-        this.qualifyingResultTime = qualifyingResultTime;
-    }
-
-    public String getRaceResultTime() {
-        return raceResultTime;
-    }
-
-    public void setRaceResultTime(String raceResultTime) {
-        this.raceResultTime = raceResultTime;
-    }
-
-    public String getRoundOrLeg() {
-        return roundOrLeg;
-    }
-
-    public void setRoundOrLeg(String roundOrLeg) {
-        this.roundOrLeg = roundOrLeg;
-    }
-
-    public String getRaceLapTime() {
-        return raceLapTime;
-    }
-
-    public void setRaceLapTime(String raceLapTime) {
-        this.raceLapTime = raceLapTime;
-    }
-
-    public String getRaceLapNumber() {
-        return raceLapNumber;
-    }
-
-    public void setRaceLapNumber(String raceLapNumber) {
-        this.raceLapNumber = raceLapNumber;
-    }
 }
