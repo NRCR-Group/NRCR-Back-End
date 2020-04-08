@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDate;
 
-
 @Document(collection = "A_Collection")
 public @Data class Races {
 
