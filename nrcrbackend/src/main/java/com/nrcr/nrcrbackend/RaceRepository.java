@@ -11,4 +11,6 @@ public interface RaceRepository extends MongoRepository<Races, String>{
     List<Races> findByDriverName(String driverName);
     List<Races> findByRaceDate(LocalDate raceDate);
     List<Races> findBySeason(String season);
+
+    List<Races> findByRaceDateBetween(LocalDate startDate, LocalDate endDate);
 }
