@@ -24,27 +24,26 @@ public class RaceController {
         return repository.findBy_id(id);
     }
 
-    @RequestMapping(value = "/Driver/{driverName}", method = RequestMethod.GET)
-    public List<Races> getRaceByDriverName(@PathVariable("driverName") String driverName) {
-        return repository.findByDriverName(driverName);
-    }
-
-    @RequestMapping(value = "/RaceDate", method = RequestMethod.GET)
-    public List<Races> getRaceByDate(@RequestParam("raceDate")
-                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate raceDate){
-        return repository.findByRaceDate(raceDate);
-    }
-
-    @RequestMapping(value = "/Season", method = RequestMethod.GET)
-    public List<Races> getRaceBySeason(@RequestParam("season") String season){
-        return repository.findBySeason(season);
-        }
-
-    @RequestMapping(value = "/RaceDateBetween", method = RequestMethod.GET)
-    public List<Races> getRaceByDates(@RequestParam("startDate")
-                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-                                      @RequestParam("endDate")
-                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate){
-        return repository.findByRaceDateBetween(startDate.minusDays(1), endDate.plusDays(1));
-    }
+//    @RequestMapping(value = "/Driver/{driverName}", method = RequestMethod.GET)
+//    public List<Races> getRaceByDriverName(@PathVariable("driverName") String driverName) {
+//        return repository.findByDriverName(driverName);
+//    }
+//
+//    @RequestMapping(value = "/RaceDate", method = RequestMethod.GET)
+//    public List<Races> getRaceByDate(@RequestParam("raceDate")
+//                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate raceDate){
+//        return repository.findByRaceDate(raceDate);
+//    }
+//
+//    @RequestMapping(value = "/Season", method = RequestMethod.GET)
+//    public List<Races> getRaceBySeason(@RequestParam("season") String season){
+//        return repository.findBySeason(season);
+//        }
+//
+//    @RequestMapping(value = "/RaceDateBetween", method = RequestMethod.GET)
+//    public List<Races> getRaceByDates(@RequestParam("startDate")
+//                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+//                                      @RequestParam("endDate")
+//                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate){
+//        return repository.findByRaceDateBetween(startDate.minusDays(1), endDate.plusDays(1));
 }
