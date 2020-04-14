@@ -18,5 +18,5 @@ class RaceResultByDriver {
     @Field("raceTime")
     public Float raceTime;
     @Field("raceLapTimes")
-    public ArrayList<RaceResultsByDriverLapTimes> raceResultsByDriverLapTimes;
+    public ArrayList<String> raceLapTimes;
 }

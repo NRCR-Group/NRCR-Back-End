@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public @Data
 class Races {
-
     @Id
     public String _id;
     @Field("raceDate")
