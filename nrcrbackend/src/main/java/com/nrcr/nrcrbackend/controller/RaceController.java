@@ -1,7 +1,8 @@
-package com.nrcr.nrcrbackend;
+package com.nrcr.nrcrbackend.controller;
 
+import com.nrcr.nrcrbackend.entity.RaceEntity;
+import com.nrcr.nrcrbackend.repository.RaceRepository;
 import org.bson.types.ObjectId;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
@@ -13,12 +14,12 @@ public class RaceController {
     private RaceRepository repository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public List<Races> getAllRace() {
+    public List<RaceEntity> getAllRace() {
         return repository.findAll();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Races getRaceById(@PathVariable("id") ObjectId id) {
+    public RaceEntity getRaceById(@PathVariable("id") ObjectId id) {
         return repository.findBy_id(id);
     }
 
