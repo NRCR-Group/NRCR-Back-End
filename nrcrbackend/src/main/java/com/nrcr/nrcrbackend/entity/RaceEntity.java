@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection = "A_Collection")
+@Document(collection = "raceResults")
 
 public @Data class RaceEntity {
     @Id
