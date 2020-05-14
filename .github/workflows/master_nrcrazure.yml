@@ -28,6 +28,5 @@ jobs:
       with:
         app-name: 'nrcrazure'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6739ee54c94142c6b844f38c00e3fdfe }}        
-        package: '/home/runner/work/NRCR-Back-End/target/*.jar'
-        #package: '${{ github.workspace }}/target/*.jar'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6739ee54c94142c6b844f38c00e3fdfe }}
+        package: '${{ github.workspace }}/target/*.jar'
