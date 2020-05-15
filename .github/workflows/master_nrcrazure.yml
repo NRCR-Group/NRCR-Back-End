@@ -21,12 +21,12 @@ jobs:
         java-version: '11'
 
     - name: Build with Maven
-      run: mvn clean install -f nrcrbackend/pom.xml
+      run: mvn clean install
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
         app-name: 'nrcrazure'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_85939546609d4c05b310c398a67ab08a }}
-        package: 'nrcrbackend/target/*.jar'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_8f2d8f9c5dee4d5996f0c459d56f455b }}
+        package: '${{ github.workspace }}/target/*.jar'
