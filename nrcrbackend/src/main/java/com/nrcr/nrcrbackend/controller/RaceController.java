@@ -4,6 +4,8 @@ import com.nrcr.nrcrbackend.entity.RaceEntity;
 import com.nrcr.nrcrbackend.repository.RaceRepository;
 import org.bson.types.ObjectId;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,11 +29,7 @@ public class RaceController {
         return repository.findBy_id(id);
     }
 
-//    @RequestMapping(value = "/Driver/{driverName}", method = RequestMethod.GET)
-//    public List<Races> getRaceByDriverName(@PathVariable("driverName") String driverName) {
-//        return repository.findByDriverName(driverName);
-//    }
-//
+
 
     // Example usage: http://localhost:8080/race-date/2018-04-23T00:00:00.000+00:00 or http://localhost:8080/race-date/2018-04-23
     @RequestMapping(value = "/race-date/{raceDate}", method = RequestMethod.GET)
@@ -41,6 +39,24 @@ public class RaceController {
     }
 
 
+    @PostMapping("/create-race-entity/")
+    RaceEntity newRaceEntity(@RequestBody RaceEntity newRaceEntity) {
+    return repository.save(newRaceEntity);
+  }
+
+
+    @DeleteMapping("/delete-race-entity/{id}")
+    void deleteRaceEntity(@PathVariable ObjectId id) {
+        String idString = id.toString();
+        repository.deleteById(idString);
+    }
+
+
+
+//    @RequestMapping(value = "/Driver/{driverName}", method = RequestMethod.GET)
+//    public List<Races> getRaceByDriverName(@PathVariable("driverName") String driverName) {
+//        return repository.findByDriverName(driverName);
+//    }
 //
 //    @RequestMapping(value = "/Season", method = RequestMethod.GET)
 //    public List<Races> getRaceBySeason(@RequestParam("season") String season){
