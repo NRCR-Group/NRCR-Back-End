@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.util.List;
 
+//Do we even use this?
 @Data public class RaceDetailEntity {
     private String driverName;
     private Integer bestQualifyingLaps;

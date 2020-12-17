@@ -29,8 +29,6 @@ public class RaceController {
         return repository.findBy_id(id);
     }
 
-
-
     // Example usage: http://localhost:8080/race-date/2018-04-23T00:00:00.000+00:00 or http://localhost:8080/race-date/2018-04-23
     @RequestMapping(value = "/race-date/{raceDate}", method = RequestMethod.GET)
     public RaceEntity getRaceByDate(@PathVariable("raceDate")
@@ -38,10 +36,9 @@ public class RaceController {
         return repository.findByRaceDate(raceDate);
     }
 
-
     @PostMapping("/create-race-entity/")
-    RaceEntity newRaceEntity(@RequestBody RaceEntity newRaceEntity) {
-    return repository.save(newRaceEntity);
+    public RaceEntity newRaceEntity(@RequestBody RaceEntity newRaceEntity) {
+    return repository.insert(newRaceEntity);
   }
 
 
@@ -50,8 +47,6 @@ public class RaceController {
         String idString = id.toString();
         repository.deleteById(idString);
     }
-
-
 
 //    @RequestMapping(value = "/Driver/{driverName}", method = RequestMethod.GET)
 //    public List<Races> getRaceByDriverName(@PathVariable("driverName") String driverName) {
