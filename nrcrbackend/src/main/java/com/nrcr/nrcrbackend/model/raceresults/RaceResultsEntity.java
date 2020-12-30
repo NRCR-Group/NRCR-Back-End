@@ -14,14 +14,14 @@ import java.util.List; //Represents an ordered sequence of objects. 'List' is pr
 @Getter @Setter
 public @Data class RaceResultsEntity {
     @Id
-    private ObjectId _id;
+    private String _id;
     private LocalDate raceDate;
     private String raceClass;
     private String raceName;
     private String raceLeg;
     private List<ResultByDriver> raceResultbyDriver;
 
-    public RaceResultsEntity(@JsonProperty("_id") ObjectId _id, @JsonProperty("raceDate") LocalDate raceDate, @JsonProperty("raceClass") String raceClass, @JsonProperty("raceName") String raceName, @JsonProperty("raceLeg") String raceLeg, @JsonProperty("raceResultbyDriver") List<ResultByDriver> raceResultbyDriver) {
+    public RaceResultsEntity(@JsonProperty("_id") String _id, @JsonProperty("raceDate") LocalDate raceDate, @JsonProperty("raceClass") String raceClass, @JsonProperty("raceName") String raceName, @JsonProperty("raceLeg") String raceLeg, @JsonProperty("raceResultbyDriver") List<ResultByDriver> raceResultbyDriver) {
         this._id = _id;
         this.raceDate = raceDate;
         this.raceClass = raceClass;
