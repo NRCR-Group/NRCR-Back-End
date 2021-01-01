@@ -1,5 +1,5 @@
 package com.nrcr.nrcrbackend.controller;
-import com.nrcr.nrcrbackend.model.raceresults.RaceResultsEntity;
+import com.nrcr.nrcrbackend.model.RaceResults.RaceResultsEntity;
 import com.nrcr.nrcrbackend.service.RaceResultsService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;

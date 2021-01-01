@@ -1,4 +1,4 @@
-package com.nrcr.nrcrbackend.model.raceresults;
+package com.nrcr.nrcrbackend.model.RaceResults;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Getter @Setter
-public class ResultByDriver {
+public class RRByDriver {
     private String driverName;
     private Integer bestQualifyingLaps;
     private Float bestQualifyingTime;
@@ -16,7 +16,7 @@ public class ResultByDriver {
     private Float raceTime;
     private List<String> raceLapTimes;
 
-    public ResultByDriver(@JsonProperty("driverName") String driverName, @JsonProperty("bestQualifyingLaps") Integer bestQualifyingLaps, @JsonProperty("bestQualifyingTime") Float bestQualifyingTime, @JsonProperty("raceLaps") Integer raceLaps, @JsonProperty("raceTime") Float raceTime, @JsonProperty("raceLapTimes") List<String> raceLapTimes) {
+    public RRByDriver(@JsonProperty("driverName") String driverName, @JsonProperty("bestQualifyingLaps") Integer bestQualifyingLaps, @JsonProperty("bestQualifyingTime") Float bestQualifyingTime, @JsonProperty("raceLaps") Integer raceLaps, @JsonProperty("raceTime") Float raceTime, @JsonProperty("raceLapTimes") List<String> raceLapTimes) {
         this.driverName = driverName;
         this.bestQualifyingLaps = bestQualifyingLaps;
         this.bestQualifyingTime = bestQualifyingTime;

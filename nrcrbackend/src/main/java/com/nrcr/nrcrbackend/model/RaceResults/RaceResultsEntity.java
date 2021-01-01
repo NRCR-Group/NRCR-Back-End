@@ -1,9 +1,8 @@
-package com.nrcr.nrcrbackend.model.raceresults;
+package com.nrcr.nrcrbackend.model.RaceResults;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
@@ -19,9 +18,9 @@ public @Data class RaceResultsEntity {
     private String raceClass;
     private String raceName;
     private String raceLeg;
-    private List<ResultByDriver> raceResultbyDriver;
+    private List<RRByDriver> raceResultbyDriver;
 
-    public RaceResultsEntity(@JsonProperty("_id") String _id, @JsonProperty("raceDate") LocalDate raceDate, @JsonProperty("raceClass") String raceClass, @JsonProperty("raceName") String raceName, @JsonProperty("raceLeg") String raceLeg, @JsonProperty("raceResultbyDriver") List<ResultByDriver> raceResultbyDriver) {
+    public RaceResultsEntity(@JsonProperty("_id") String _id, @JsonProperty("raceDate") LocalDate raceDate, @JsonProperty("raceClass") String raceClass, @JsonProperty("raceName") String raceName, @JsonProperty("raceLeg") String raceLeg, @JsonProperty("raceResultbyDriver") List<RRByDriver> raceResultbyDriver) {
         this._id = _id;
         this.raceDate = raceDate;
         this.raceClass = raceClass;

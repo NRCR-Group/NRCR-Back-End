@@ -1,6 +1,6 @@
 package com.nrcr.nrcrbackend.service;
 import com.nrcr.nrcrbackend.dao.RaceResultsDAO;
-import com.nrcr.nrcrbackend.model.raceresults.RaceResultsEntity;
+import com.nrcr.nrcrbackend.model.RaceResults.RaceResultsEntity;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,6 @@ public class RaceResultsService {
         return raceResultsDao.findBy_id(_id);
     }
 
-    //TODO: Need to test this one.
     public RaceResultsEntity getRaceByDate(Date raceDate) {
 
         return raceResultsDao.findByRaceDate(raceDate);
