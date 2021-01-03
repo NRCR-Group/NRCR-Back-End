@@ -9,6 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 @EntityScan("com.nrcr.nrcrbackend.model.raceresults.RaceResultsEntity")
 @ComponentScan("com.nrcr.nrcrbackend.service.RaceResultsService")
 @ComponentScan("com.nrcr.nrcrbackend.dao.RaceResultsDAO")
+@ComponentScan("com.nrcr.nrcrbackend.exception.ApiRequestException")
+@ComponentScan("com.nrcr.nrcrbackend.exception.ApiExceptionHandler")
+@ComponentScan("com.nrcr.nrcrbackend.exception.ApiException")
+
+
 
 @ComponentScan(basePackages={"com.nrcr.nrcrbackend.controller.RaceResultsController"})
 

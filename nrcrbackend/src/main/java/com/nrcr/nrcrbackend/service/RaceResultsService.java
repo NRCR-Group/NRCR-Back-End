@@ -5,6 +5,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class RaceResultsService {
         return raceResultsDao.findBy_id(_id);
     }
 
-    public RaceResultsEntity getRaceByDate(Date raceDate) {
+    public RaceResultsEntity getRaceByDate(LocalDate raceDate) {
 
         return raceResultsDao.findByRaceDate(raceDate);
     }

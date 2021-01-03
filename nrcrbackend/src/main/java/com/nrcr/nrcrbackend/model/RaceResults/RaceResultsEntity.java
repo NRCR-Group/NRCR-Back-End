@@ -5,7 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Date;
 import java.util.List; //Represents an ordered sequence of objects. 'List' is preferred to arraylist when an order is not given.
 
 @Document(collection = "raceResults")
@@ -14,7 +21,9 @@ import java.util.List; //Represents an ordered sequence of objects. 'List' is pr
 public @Data class RaceResultsEntity {
     @Id
     private String _id;
+    //@NotNull(message = "Date cannot be null")
     private LocalDate raceDate;
+    //@NotBlank(message = "raceClass is mandatory") @NotNull(message = "raceClass cannot be null")
     private String raceClass;
     private String raceName;
     private String raceLeg;
@@ -28,4 +37,5 @@ public @Data class RaceResultsEntity {
         this.raceLeg = raceLeg;
         this.raceResultbyDriver = raceResultbyDriver;
     }
+
 }
