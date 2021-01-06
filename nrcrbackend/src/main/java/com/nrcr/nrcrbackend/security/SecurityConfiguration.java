@@ -29,6 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception
     {
+        //TODO: Add username and password to *.properties files.
         auth.inMemoryAuthentication()
                 .withUser("user")
                 .password("{noop}password")
