@@ -19,7 +19,9 @@ import java.util.List; //Represents an ordered sequence of objects. 'List' is pr
 public @Data class RaceResultsEntity {
     @Id
     private String _id;
+    //TODO: Need to fix getByDate controller. It breaks when it can't find a unique value. Either create a custom annotator to only allow unique Dates or show multiple. Also need to add exception handling for it.
     @NotNull(message = "Race Date cannot be null")
+    //TODO: Do we need the validation annotation that says only dates in the past or present can be accepted...
     private LocalDate raceDate;
     private String raceClass;
     @Size(min=3, message="Race Name should be at least 3 characters.")

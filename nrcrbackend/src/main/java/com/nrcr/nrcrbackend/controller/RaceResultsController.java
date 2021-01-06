@@ -1,5 +1,5 @@
 package com.nrcr.nrcrbackend.controller;
-import com.nrcr.nrcrbackend.exception.ApiRequestException;
+import com.nrcr.nrcrbackend.exceptions.NotFoundException;
 import com.nrcr.nrcrbackend.model.RaceResults.RaceResultsEntity;
 import com.nrcr.nrcrbackend.service.RaceResultsService;
 import org.bson.types.ObjectId;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @RequestMapping("/")
@@ -26,7 +25,7 @@ public class RaceResultsController {
     public List<RaceResultsEntity> getAllRaces() {
         List<RaceResultsEntity> allRaces = resultsService.getAllRaces();
         if(allRaces == null) {
-            throw new ApiRequestException("No Race Results found.");
+            throw new NotFoundException("No Race Results found.");
         }
         return allRaces;
     }
@@ -35,7 +34,7 @@ public class RaceResultsController {
     public RaceResultsEntity getRaceById(@PathVariable("id") ObjectId id) {
         RaceResultsEntity raceById = resultsService.getRaceById(id);
         if(raceById == null) {
-            throw new ApiRequestException("Cannot find race with given ID.");
+            throw new NotFoundException("Cannot find race with given ID.");
         }
         return raceById;
     }
@@ -47,7 +46,7 @@ public class RaceResultsController {
                                     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate raceDate) {
         RaceResultsEntity raceByDate = resultsService.getRaceByDate(raceDate);
         if(raceByDate == null) {
-           throw new ApiRequestException("Cannot find race with given Date.");
+           throw new NotFoundException("Cannot find race with given Date.");
        }
         return raceByDate;
     }
