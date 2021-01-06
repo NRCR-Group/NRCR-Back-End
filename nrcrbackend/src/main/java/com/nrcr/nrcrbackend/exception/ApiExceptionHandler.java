@@ -10,7 +10,7 @@ import java.time.ZonedDateTime;
 
 //Handles exceptions and customises them the way that the error is thrown to the client.
 
-@ControllerAdvice
+@ControllerAdvice //This is the main class that can handle exceptions for all controllers.
 public class ApiExceptionHandler {
 
     @ExceptionHandler(value = {ApiRequestException.class})

@@ -6,9 +6,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -21,11 +19,12 @@ import java.util.List; //Represents an ordered sequence of objects. 'List' is pr
 public @Data class RaceResultsEntity {
     @Id
     private String _id;
-    //@NotNull(message = "Date cannot be null")
+    @NotNull(message = "Race Date cannot be null")
     private LocalDate raceDate;
-    //@NotBlank(message = "raceClass is mandatory") @NotNull(message = "raceClass cannot be null")
     private String raceClass;
+    @Size(min=3, message="Race Name should be at least 3 characters.")
     private String raceName;
+    @NotEmpty(message="Race Leg is a mandatory field")
     private String raceLeg;
     private List<RRByDriver> raceResultbyDriver;
 
@@ -37,5 +36,4 @@ public @Data class RaceResultsEntity {
         this.raceLeg = raceLeg;
         this.raceResultbyDriver = raceResultbyDriver;
     }
-
 }

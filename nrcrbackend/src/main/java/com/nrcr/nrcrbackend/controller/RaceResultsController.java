@@ -40,11 +40,11 @@ public class RaceResultsController {
         return raceById;
     }
 
-    // Example usage: http://localhost:8080/race-date/2018-04-23
+    // Example usage: http://localhost:8080/race-date/2018-04-23T00:00:00.000+00:00 or http://localhost:8080/race-date/2018-04-23
     @GetMapping
     @RequestMapping(value = "race-date/{raceDate}", method = RequestMethod.GET)
     public RaceResultsEntity getRaceByDate(@PathVariable("raceDate")
-                                               @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate raceDate) {
+                                    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate raceDate) {
         RaceResultsEntity raceByDate = resultsService.getRaceByDate(raceDate);
         if(raceByDate == null) {
            throw new ApiRequestException("Cannot find race with given Date.");
